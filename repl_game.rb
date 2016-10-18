@@ -3,7 +3,7 @@ puts "Welcome to WynClue "
 puts "The game where you will have to discover who, killed Ed, where and how."
 puts " There are three suspects: Bianca, Joe, Jose."
 puts " There are three locations: classroom, garage, bathroom."
-puts " There are three weapons: laptop, phone, marker."
+puts " There are three weapons: laptop, phone, skateboard."
 puts "Are you ready to play, try to solve the mystery"
 
 #generate the winning combination
@@ -14,7 +14,7 @@ weapon = 1 + rand(3).to_i
 # Define the variables
 murderer_array= ["","bianca" ,"joe" ,"jose"]
 location_array = ["","classroom", "garage", "bathroom"]
-weapon_array = ["","laptop", "phone", "marker"]
+weapon_array = ["","laptop", "phone", "skateboard"]
 counter = 0
 
 #Generate hash with winning combination
@@ -44,7 +44,7 @@ until place == winner_comb.fetch("location")
 end
 
 puts "Ed was killed in the #{place}"
-puts "What weapon do you think killed Ed: laptop, phone, marker"
+puts "What weapon do you think killed Ed: laptop, phone, skateboard"
 tool = gets.chomp.downcase
 
 until tool == winner_comb.fetch("weapon")
@@ -57,3 +57,4 @@ puts "Ed was killed with a #{tool}"
 puts "That's it you finally solved the mystery"
 puts killer + " killed Ed at the " + place + " with a " + tool
 puts "it took you #{counter} to finish the game"
+puts "Game over, see you later!"
